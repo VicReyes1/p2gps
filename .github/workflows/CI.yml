@@ -32,7 +32,13 @@ jobs:
     - name: hacer build del backend
       working-directory: src/Backend/OrderService
       run: ./gradlew build test
-  
+      
+    - name: dockerizar el front y el backend
+      run: |
+        cp src/Clients/build/libs/*.war deploy/docker/clients/drop #copiar el resultado del build para la nueva imagen
+        docker build -t p2gps/web deploy/docker/clients
+         cp src/Backend/OrderService/build/libs/ordering* deploy/docker/order/drop
+         docker build -t p2gps/order deploy/docker/Order
    
    
 
