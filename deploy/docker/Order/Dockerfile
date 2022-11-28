@@ -10,7 +10,7 @@ COPY drop/* /usr/local/app/
 
 COPY drop/run.sh usr/local/app/run.sh
 
-COPY drop/application.properties application.properties
+COPY drop/application.properties application.properties 
 
 EXPOSE 8080
 
