@@ -42,8 +42,8 @@ jobs:
     - name: Login to Dockerhub
       uses: docker/login-action@v1 
       with:
-        username: S{f secrets.DOCKERHUB_USERNAME }} 
-        password: S{f secrets. DOCKERHUB_PASSWORD }} 
+        username: ${{ secrets.DOCKERHUB_USERNAME }} 
+        password: ${{ secrets. DOCKERHUB_PASSWORD }} 
     - name: Etiquetar con formato Dockerhub
       run: |
         docker tag p2gps/web S{{ secrets.DOCKERHUB_USERNAME }}/p2gps:web
