@@ -35,7 +35,7 @@ jobs:
       
     - name: dockerizar front y back
       run: |
-        cp src/Client/build/libs/*.war deploy/docker/Clients/drop
+        cp src/Clients/build/libs/*.war deploy/docker/Clients/drop
         docker build -t p2gps/web deploy/docker/Clients
         cp src/Backend/OrderService/build/libs/ordering* deploy/docker/Order/drop
         docker build -t p2gps/order deploy/docker/Order
